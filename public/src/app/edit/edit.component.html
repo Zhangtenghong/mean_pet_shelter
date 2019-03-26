@@ -1,0 +1,39 @@
+<h3>Edit this pet</h3>
+<p class="error" *ngFor="let e of errorMessages">{{e}}</p>
+<form (submit)="updatePet()">
+  <p>{{newPet | json}}</p>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Pet name</label>
+      <input type="text" class="form-control" name="name" [(ngModel)]="editPet.name">
+    </div>
+    <div class="form-group col-md-6">
+      <label>Pet type</label>
+      <input type="text" class="form-control" name="type" [(ngModel)]="editPet.type">
+    </div>
+    <div class="form-group col-md-6">
+      <label>Description</label>
+      <input type="text" class="form-control" name="description" [(ngModel)]="editPet.description">
+    </div>
+  </div>
+  <div class="form-row">
+    <label>Skills</label>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Skill 1</label>
+      <input type="text" class="form-control" name="skill_1" [(ngModel)]="editPet.skill_1">
+    </div>
+    <div class="form-group col-md-6">
+      <label>Skill 2</label>
+      <input type="text" class="form-control" name="skill_2" [(ngModel)]="editPet.skill_2">
+    </div>
+    <div class="form-group col-md-6">
+      <label>Skill 3</label>
+      <input type="text" class="form-control" name="skill_3" [(ngModel)]="editPet.skill_3">
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Edit pet</button>
+  <br>
+</form>
+<button [routerLink] = '["/pets"]' >Cancel</button>

@@ -1,0 +1,15 @@
+<h3>Details</h3>
+<p>Pet name: {{singlePet.name}}</p>
+<p>Pet type: {{singlePet.type}}</p>
+<p>Description: {{singlePet.description}}</p>
+<p>Skills:</p>
+<ul>
+  <li>{{singlePet.skill_1}}</li>
+  <li>{{singlePet.skill_2}}</li>
+  <li>{{singlePet.skill_3}}</li>
+</ul>
+<p>Likes: {{singlePet.likes}}</p>
+
+<button *ngIf="liked;else disabled" (click)="likeButtonClick(singlePet)">Like this pet</button>
+<ng-template #disabled><button type="button" disabled>Liked this pet</button></ng-template>
+<button (click)="deletePetFromService(singlePet._id)">Adopt this pet</button>

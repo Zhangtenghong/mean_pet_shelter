@@ -1,0 +1,16 @@
+<h3>These pets are looking for a home</h3>
+<table class="table table-striped">
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Actions</th>
+  </tr>
+  <tr *ngFor="let p of allPets">
+    <td>{{p.name}}</td>
+    <td>{{p.type}}</td>
+    <td>
+      <button [routerLink]="['/pets/',p._id]">Details</button>
+      <button [routerLink]="['/pets/',p._id,'edit']">Edit</button>
+    </td>
+  </tr>
+</table>
